@@ -65,7 +65,7 @@ def main():
 
     rustscan = Popen(["rustscan", "-g", *rustscanArgs, ip], stdout=PIPE, stderr=STDOUT) # Run rustscan in greppable mode using passed args, greppable mode just outputs the ports
 
-    out, _ = rustscan.communicate() # Get the output and the errors
+    out = rustscan.communicate()[0] # Get the output
     out = GREEN + out.decode("utf-8") + ENDCOLOR # Make output green
 
     out = out.split("->")[-1] # Rustscan gives back data in form "IP -> [PORTS]".  Splits by the arrow and takes the part with the ports
@@ -92,7 +92,7 @@ def main():
     nmap = Popen(["sudo", "nmap", *nmapArgs, ip], stdout=PIPE, stderr=STDOUT) # Run nmap
 
 
-    out, _ = nmap.communicate() # Get the output and the errors
+    out = nmap.communicate()[0] # Get the output
     out = GREEN + out.decode("utf-8") + ENDCOLOR # Make output green
     
     print(out)
