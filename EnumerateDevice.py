@@ -21,10 +21,10 @@ def main():
 
     parser.add_argument(dest="ip", help="IP address of the target") # Adds mandatory argument for the IP address
 
-    parser.add_argument("--noBanner",  "-nB", help="Do not print the banner.", action="store_true") # Optional flag to disable the printing of the banner
-    parser.add_argument("--fileName",  "-fN", help="Path for the output file", default=None) # Optional flag to change the name of the output file
-    parser.add_argument("--rustscan",  "-rs", help="Specify args to be passed to rustscan here in quotes (run rustscan --help for more info)", default="--ulimit 5000") # Optional flag to send flags to rustscan
-    parser.add_argument("--nmap",      "-nm", help="Specify args to be passed to nmap here in quotes, ports are gotten from the rustscan.  Default is \"-A --reason -Pn -sV -sC --script vuln -T5\" (run nmap --help for more info)", default="-A --reason -Pn -sV -sC --script vuln -T5") # Optional flag to send flags to nmap
+    parser.add_argument("--noBanner", "-nB", help="Do not print the banner.", action="store_true") # Optional flag to disable the printing of the banner
+    parser.add_argument("--fileName", "-fN", help="Path for the output file", default=None) # Optional flag to change the name of the output file
+    parser.add_argument("--rustscan", "-rs", help="Specify args to be passed to rustscan here in quotes (run rustscan --help for more info)", default="--ulimit 5000") # Optional flag to send flags to rustscan
+    parser.add_argument("--nmap",     "-nm", help="Specify args to be passed to nmap here in quotes, ports are gotten from the rustscan.  Default is \"-A --reason -Pn -sV -sC --script vuln -T5\" (run nmap --help for more info)", default="-A --reason -Pn -sV -sC --script vuln -T5") # Optional flag to send flags to nmap
 
 
     args = parser.parse_args() # Parse the args
