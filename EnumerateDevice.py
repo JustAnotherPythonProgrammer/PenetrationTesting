@@ -29,9 +29,9 @@ def main():
 
     args = parser.parse_args() # Parse the args
 
-    ip           = args.ip # The IP address supplied
-    noBanner     = args.noBanner # Whether or not to show the banner
-    outputFile   = args.fileName # The path to write the output file
+    ip         = args.ip # The IP address supplied
+    noBanner   = args.noBanner # Whether or not to show the banner
+    outputFile = args.fileName # The path to write the output file
 
     if outputFile:
         args.nmap += " -oN " + outputFile
